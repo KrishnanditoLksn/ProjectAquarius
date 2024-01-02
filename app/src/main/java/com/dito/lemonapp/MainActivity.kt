@@ -6,11 +6,13 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.dito.lemonapp.components.process.LemonStepApp
+
 import com.dito.lemonapp.ui.theme.LemonAppTheme
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    LemonApp("Android")
+                    LemonApp()
                 }
             }
         }
@@ -30,17 +32,15 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun LemonApp(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun LemonApp() {
+    LemonStepApp()
 }
+
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun LemonAppPreview() {
     LemonAppTheme {
-        LemonApp("Lemon App")
+        LemonApp()
     }
 }
